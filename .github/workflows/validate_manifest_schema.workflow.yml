@@ -1,0 +1,17 @@
+name: Pull request
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  validate_schema:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout ${{ github.repository }}
+        uses: actions/checkout@v4
+      - name: Validate manifest schema
+        uses: GrantBirki/json-yaml-validate@e42e6ece9b97f2b220274c909a9a98e380c2c9fd
+        with:
+          files: manifest.schema.json
+          use_gitignore: false
