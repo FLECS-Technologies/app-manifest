@@ -67,6 +67,11 @@
       ],
       "$comment": "https://regex101.com/r/EkbfNE/1"
     },
+    "compose": {
+      "description": "Docker compose YAML for the App",
+      "type": "object",
+      "$schema": "https://raw.githubusercontent.com/compose-spec/compose-go/refs/tags/v2.4.4/schema/compose-spec.json"
+    },
     "multiInstance": {
       "description": "'true' if App can be instantiated more than once (requires no editor, no ports)",
       "type": "boolean",
@@ -95,7 +100,10 @@
             "default": true
           }
         },
-        "required": ["name", "port"]
+        "required": [
+          "name",
+          "port"
+        ]
       },
       "examples": [
         [
@@ -236,10 +244,22 @@
       "$comment": "https://regex101.com/r/xOiJXu/1"
     }
   },
+  "additionalProperties": false,
   "required": [
     "_schemaVersion",
     "app",
-    "version",
-    "image"
+    "version"
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "image"
+      ]
+    },
+    {
+      "required": [
+        "compose"
+      ]
+    }
   ]
 }
