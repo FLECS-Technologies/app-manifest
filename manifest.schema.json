@@ -67,11 +67,6 @@
       ],
       "$comment": "https://regex101.com/r/EkbfNE/1"
     },
-    "compose": {
-      "description": "Docker compose YAML for the App",
-      "type": "object",
-      "$schema": "https://raw.githubusercontent.com/compose-spec/compose-go/refs/tags/v2.4.4/schema/compose-spec.json"
-    },
     "multiInstance": {
       "description": "'true' if App can be instantiated more than once (requires no editor, no ports)",
       "type": "boolean",
@@ -242,6 +237,25 @@
         ]
       },
       "$comment": "https://regex101.com/r/xOiJXu/1"
+    },
+    "deployment": {
+      "description": "Method of deploying the App through FLECS",
+      "type": "object",
+      "properties": {
+        "compose": {
+          "type": "object",
+          "properties": {
+            "yaml": {
+              "description": "docker-compose.yml file converted to JSON",
+              "type": "object",
+              "$schema": "https://raw.githubusercontent.com/compose-spec/compose-go/refs/tags/v2.4.4/schema/compose-spec.json"
+            }
+          }
+        }
+      },
+      "required": [
+        "compose"
+      ]
     }
   },
   "additionalProperties": false,
@@ -258,7 +272,7 @@
     },
     {
       "required": [
-        "compose"
+        "deployment"
       ]
     }
   ]
