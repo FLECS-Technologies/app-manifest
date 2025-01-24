@@ -4,7 +4,11 @@
   "title": "FLECS App Manifest",
   "description": "Schema for the FLECS App Manifest",
   "type": "object",
-  "properties": {
+  "oneOf": [
+    {"$ref": "#/definitions/single"},
+    {"$ref": "#/definitions/multi"}
+  ],
+  "definitions": {
     "_schemaVersion": {
       "description": "Version of the implemented FLECS App Manifest schema",
       "type": "string",
@@ -261,24 +265,135 @@
       "required": [
         "compose"
       ]
-    }
-  },
-  "additionalProperties": false,
-  "required": [
-    "_schemaVersion",
-    "app",
-    "version"
-  ],
-  "oneOf": [
-    {
-      "required": [
-        "image"
-      ]
     },
-    {
+    "single": {
+      "type": "object",
+      "properties": {
+        "_schemaVersion": {
+          "$ref": "#/definitions/_schemaVersion"
+        },
+        "_minimumFlecsVersion": {
+          "$ref": "#/definitions/_minimumFlecsVersion"
+        },
+        "app": {
+          "$ref": "#/definitions/app"
+        },
+        "version": {
+          "$ref": "#/definitions/version"
+        },
+        "revision": {
+          "$ref": "#/definitions/revision"
+        },
+        "image": {
+          "$ref": "#/definitions/image"
+        },
+        "multiInstance": {
+          "$ref": "#/definitions/multiInstance"
+        },
+        "editors": {
+          "$ref": "#/definitions/editors"
+        },
+        "args": {
+          "$ref": "#/definitions/args"
+        },
+        "capabilities": {
+          "$ref": "#/definitions/capabilities"
+        },
+        "conffiles": {
+          "$ref": "#/definitions/conffiles"
+        },
+        "devices": {
+          "$ref": "#/definitions/devices"
+        },
+        "env": {
+          "$ref": "#/definitions/env"
+        },
+        "interactive": {
+          "$ref": "#/definitions/interactive"
+        },
+        "ports": {
+          "$ref": "#/definitions/ports"
+        },
+        "volumes": {
+          "$ref": "#/definitions/volumes"
+        },
+        "labels": {
+          "$ref": "#/definitions/labels"
+        },
+        "hostname": {
+          "$ref": "#/definitions/hostname"
+        }
+      },
       "required": [
+        "_schemaVersion",
+        "app",
+        "version",
+        "image"
+      ],
+      "additionalProperties": false
+    },
+    "multi": {
+      "type": "object",
+      "properties": {
+        "_schemaVersion": {
+          "$ref": "#/definitions/_schemaVersion"
+        },
+        "_minimumFlecsVersion": {
+          "$ref": "#/definitions/_minimumFlecsVersion"
+        },
+        "app": {
+          "$ref": "#/definitions/app"
+        },
+        "version": {
+          "$ref": "#/definitions/version"
+        },
+        "multiInstance": {
+          "$ref": "#/definitions/multiInstance"
+        },
+        "editors": {
+          "$ref": "#/definitions/editors"
+        },
+        "args": {
+          "$ref": "#/definitions/args"
+        },
+        "capabilities": {
+          "$ref": "#/definitions/capabilities"
+        },
+        "conffiles": {
+          "$ref": "#/definitions/conffiles"
+        },
+        "devices": {
+          "$ref": "#/definitions/devices"
+        },
+        "env": {
+          "$ref": "#/definitions/env"
+        },
+        "interactive": {
+          "$ref": "#/definitions/interactive"
+        },
+        "ports": {
+          "$ref": "#/definitions/ports"
+        },
+        "volumes": {
+          "$ref": "#/definitions/volumes"
+        },
+        "labels": {
+          "$ref": "#/definitions/labels"
+        },
+        "hostname": {
+          "$ref": "#/definitions/hostname"
+        },
+        "deployment": {
+          "$ref": "#/definitions/deployment"
+        }
+      },
+      "required": [
+        "_schemaVersion",
+        "app",
+        "version",
         "deployment"
-      ]
+      ],
+      "additionalProperties": false
     }
-  ]
+  }
 }
