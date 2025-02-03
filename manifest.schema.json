@@ -347,41 +347,8 @@
         "version": {
           "$ref": "#/definitions/version"
         },
-        "multiInstance": {
-          "$ref": "#/definitions/multiInstance"
-        },
-        "editors": {
-          "$ref": "#/definitions/editors"
-        },
-        "args": {
-          "$ref": "#/definitions/args"
-        },
-        "capabilities": {
-          "$ref": "#/definitions/capabilities"
-        },
-        "conffiles": {
-          "$ref": "#/definitions/conffiles"
-        },
-        "devices": {
-          "$ref": "#/definitions/devices"
-        },
-        "env": {
-          "$ref": "#/definitions/env"
-        },
-        "interactive": {
-          "$ref": "#/definitions/interactive"
-        },
-        "ports": {
-          "$ref": "#/definitions/ports"
-        },
-        "volumes": {
-          "$ref": "#/definitions/volumes"
-        },
-        "labels": {
-          "$ref": "#/definitions/labels"
-        },
-        "hostname": {
-          "$ref": "#/definitions/hostname"
+        "revision": {
+          "$ref": "#/definitions/revision"
         },
         "deployment": {
           "$ref": "#/definitions/deployment"
