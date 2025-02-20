@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/FLECS-Technologies/app-sdk/main/manifest.schema.json",
+  "$id": "https://raw.githubusercontent.com/FLECS-Technologies/app-manifest/3.x/manifest.schema.json",
   "title": "FLECS App Manifest",
   "description": "Schema for the FLECS App Manifest",
   "type": "object",
