@@ -9,6 +9,14 @@
     {"$ref": "#/definitions/multi"}
   ],
   "definitions": {
+    "$schema": {
+      "description": "Location of the JSON schema to validate against",
+      "type": "string",
+      "examples": [
+        "https://raw.githubusercontent.com/FLECS-Technologies/app-manifest/2.x/manifest.schema.json",
+        "https://raw.githubusercontent.com/FLECS-Technologies/app-manifest/3.x/manifest.schema.json"
+      ]
+    },
     "_schemaVersion": {
       "description": "Version of the implemented FLECS App Manifest schema",
       "type": "string",
@@ -269,6 +277,9 @@
     "single": {
       "type": "object",
       "properties": {
+        "$schema": {
+          "$ref": "#/definitions/$schema"
+        },
         "_schemaVersion": {
           "$ref": "#/definitions/_schemaVersion"
         },
@@ -335,6 +346,9 @@
     "multi": {
       "type": "object",
       "properties": {
+        "$schema": {
+          "$ref": "#/definitions/$schema"
+        },
         "_schemaVersion": {
           "$ref": "#/definitions/_schemaVersion"
         },
