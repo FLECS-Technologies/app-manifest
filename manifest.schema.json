@@ -274,6 +274,27 @@
         "compose"
       ]
     },
+    "depends": {
+      "type": "object",
+      "additionalProperties": true,
+      "propertyNames": {
+        "pattern": "^([\\w.-]+)(?:\\s*\\|\\s*([\\w.-]+))*$"
+      }
+    },
+    "provides": {
+      "type": "object",
+      "additionalProperties": true,
+      "propertyNames": {
+        "pattern": "^([\\w.-]+)$"
+      }
+    },
+    "recommends": {
+      "type": "object",
+      "additionalProperties": true,
+      "propertyNames": {
+        "pattern": "^([\\w.-]+)(?:\\s*\\|\\s*([\\w.-]+))*$"
+      }
+    },
     "single": {
       "type": "object",
       "properties": {
@@ -333,6 +354,15 @@
         },
         "hostname": {
           "$ref": "#/definitions/hostname"
+        },
+        "depends": {
+          "$ref": "#/definitions/depends"
+        },
+        "provides": {
+          "$ref": "#/definitions/provides"
+        },
+        "recommends": {
+          "$ref": "#/definitions/recommends"
         }
       },
       "required": [
@@ -366,6 +396,15 @@
         },
         "deployment": {
           "$ref": "#/definitions/deployment"
+        },
+        "depends": {
+          "$ref": "#/definitions/depends"
+        },
+        "provides": {
+          "$ref": "#/definitions/provides"
+        },
+        "recommends": {
+          "$ref": "#/definitions/recommends"
         }
       },
       "required": [
